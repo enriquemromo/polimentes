@@ -52,9 +52,12 @@ public class HomeActivity extends AppCompatActivity {
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUser();
         if(user != null){
-            userDAO.delete(user);
+            userDAO.delete();
+            Toast.makeText(getApplicationContext(),getString(R.string.label_close_session),Toast.LENGTH_LONG).show();
+            Intent activityIntent  = new Intent(this,MainActivity.class);
+            startActivity(activityIntent);
         }
-        Toast.makeText(getApplicationContext(),getString(R.string.label_close_session),Toast.LENGTH_LONG).show();
+
     }
 
     @Override

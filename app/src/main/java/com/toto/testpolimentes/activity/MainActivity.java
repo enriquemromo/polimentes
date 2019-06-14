@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSignup;
     private String email;
     private String password;
-    private UserDAO userDAO;
 
 
     @Override
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        userDAO = new UserDAO();
+
 
 
     }
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(IsEmailValid(email) & IsPasswordValid(password)){
                Intent activityIntent = null;
+                UserDAO userDAO = new UserDAO();
                 User user = userDAO.getUser();
                 if(user == null){
                     activityIntent  = new Intent(this,RegisterActivity.class);

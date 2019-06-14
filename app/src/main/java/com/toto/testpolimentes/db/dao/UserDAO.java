@@ -1,15 +1,17 @@
 package com.toto.testpolimentes.db.dao;
 
+import com.raizlabs.android.dbflow.sql.language.Delete;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.toto.testpolimentes.db.model.User;
+import com.toto.testpolimentes.db.model.User_Table;
 
 import java.util.List;
 
 public class UserDAO  {
 
-    public void delete(User user){
+    public void delete(){
 
-        user.delete();
+        Delete.table(User.class);
 
     }
 
